@@ -1,0 +1,104 @@
+//css reset and general stuff-----------------------------------------------------------
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+$themeColor: #73d7c6;
+
+
+//To do, or not to dooooooooooooooo--------------------------------------
+.toDoApp{
+  width: 70%;
+  margin: 15%;
+
+}
+.toDoHeader{
+  background-color: $themeColor;
+  padding: 30px 40px;
+  text-align: center;
+  h2{
+    margin: 8px
+  }
+  .formToDo{
+    display: flex;
+    input{
+      width: 80%;
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 0;
+    }
+    .addToDoBtn{
+      width:20%;
+      background-color: #2b2b2b;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      &:hover{
+        background-color: #5b5b5b;
+      }
+    }
+  }
+}
+
+.toDoApp{
+  ul{
+    width: 100%;
+    li{
+      text-decoration: none;
+    }
+    li:nth-child(odd){
+      background-color: #e8e8ef;
+      &:hover{
+        background-color: gray;
+      }
+    }
+    li:nth-child(even){
+      background-color: white;
+      &:hover{
+        background-color: gray;
+      }
+    }
+  }
+}
+
+.toDoListItem{
+  cursor: pointer;
+  position: relative;
+  padding: 0.5em;
+  span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5em 1em;
+    &:hover{
+      background-color: red;
+      color: white
+    }
+  }
+}
+
+.toDoApp {
+  ul li.checked{
+  transition: 0.5s;
+  text-decoration: line-through;
+  background-color: darkgray;
+  color: white;
+  &::before{
+    content:"";
+    position: absolute;
+    left: 0.5em;
+    height: 0.4em;
+    width: 1em;
+    border: solid 2px white;
+    border-top-style: none;
+    border-right-style: none;
+    transform: rotate(-45deg);
+    }
+  }
+}
